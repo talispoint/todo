@@ -1,0 +1,13 @@
+{% if todo_list %}
+	<ul>
+	{% for todo in todo_list %}
+		<li>
+			{% if todo.finished %}<s>{% endif %}
+			<a href="{% url 'list:detail' todo.id %}">{{ todo.title }}</a>
+			{% if todo.finished %}</s>{% endif %}
+		</li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<p>No todos.</p>
+{% endif %}

@@ -1,0 +1,11 @@
+{% if todo %}
+
+	<p>{{ todo.title }}</p>
+
+	<form action="{% url 'list:finished' todo.id %}" method="post">
+		{% csrf_token %}
+		<label><input type="checkbox" name="finished" {{ todo.finished | yesno:"checked,foo,bar" }}>Finished</label>
+		<input type="submit" value="Done">
+	</form>
+
+{% endif %}
