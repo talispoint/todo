@@ -5,6 +5,7 @@ from django.views import generic
 
 from list.models import Todo
 
+
 # Create your views here. 
 
 class IndexView(generic.ListView):
